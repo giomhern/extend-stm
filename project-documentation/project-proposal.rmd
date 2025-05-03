@@ -119,3 +119,9 @@ This dataset contains 150 responses and 42 columns that share similar features a
 
 
 # Unsupervised Methodology
+
+In this paper, unsupervised learning is used as an automated way to extract latent themes or topics from the open-ended responses 
+across different political science experiments. The algorithm they propose is a structural topic model which is an advanced form 
+of the Latent Dirichlet Allocation that incorporates document-level metadata into the topic discovery process and informs more 
+nuanced topics. This method extends LDA by essentially allowing topic proportions to vary with covariates. This is done using the 
+`stm` package in R that both infers the number and content of best topics from the text data.  
