@@ -17,10 +17,10 @@ meta <- read.csv("final_anes_metadata.csv")
 meta |> head()
 dim(meta)
 
-rand <- read.csv("tdm89_metadata.csv")
+rand <- read.csv("tdm89_metadata.csv") |> head()
 dim(rand)
 
-gandarian <- read.csv("gadarian_metadata.csv")
+gandarian <- read.csv("gadarian_metadata.csv") |> head()
 dim(gandarian)
 
 # Basic structure
