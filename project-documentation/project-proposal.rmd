@@ -1,0 +1,121 @@
+---
+title: "Replication Project Step 1: Paper Selection"
+author: "Giovanni Maya"
+date: "`r Sys.Date()`"
+output: pdf_document
+header-includes:
+  - \usepackage{geometry}
+  - \geometry{margin=1in}
+  - \usepackage{fontsize}
+  - \usepackage{indentfirst}
+  - \setlength{\parindent}{0.5in}
+  - \fontsize{12pt}{14pt}\selectfont
+---
+# Paper: Introduction and Argument
+The paper selected for my project is titled **Structural Topic Models for Open-Ended Survey Responses** by Roberts et al 2013. 
+This piece has been published on multiple notable journals such as the Midwest Political Science Association, which is where I 
+sourced it from. A quick synopsis of the paper's interest will be useful for our analysis of the data and methods shown in future sections. 
+
+The collection and analysis of open-ended data in political science is infrequently used, and when it is employed, analyses of the sort rely
+specifically on human coding to determine trends (thus, no automation). They mention that the major advantage to analyzing open-ended data is 
+that it provides a significant and direct view into a respondent's own thinking rather an interpretative understanding of their thinking. 
+In other words, it allows for the respondent to express a subjective view that would otherwise be constrained or guided if it was a 
+close-ended question. However, they posit two main concerns that arise as a result of this analysis. For one, there is the challenge of 
+a tendency for subjects to articulate a response instead of their underlying attitudes. Secondly, they have been considered more difficult 
+to analyze than close-ended questions, often requiring various stakeholders to come to a formidable and interpretable output. Nonetheless, 
+the authors note that though these concerns are valid, they should not be overtly substantial in the inhibition of *true insights*. 
+As a result, the core of their **thesis** is the structural topic model (STM) that offers a powerful and flexible unsupervised framework 
+for analyzing open-ended survey responses and systematically relating them to respondent-level covariates, mitigating the need 
+for hand-coding and labeled data. 
+
+# Datasets
+
+For this project, three datasets were included with the paper, of which I will cover one by one. The main and primary dataset comes from the 2008 Anes Time-Series 
+Study which includes open-ended responses to the question of the most prominent political problem. This dataset includes demographic metadata such as age, 
+education, and of course, the respondents' description of what they believe to be the most pressing problem facing the country. This also included respondents' responses 
+about what aspects of a presidential candidate they liked or disliked. The dataset contains over 2,000 open-ended survey responses paired with 
+64 columns of detailed political and demographic metadata. A sample is shown in Table 1. 
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|p{4.5cm}|p{4.5cm}|}
+\hline
+\textbf{Age} & \textbf{PID Summary} & \textbf{Issue 1 (mippol1)} & \textbf{Issue 2 (mippol2)} \\
+\hline
+35 & 4 & the economy & immigration \\
+\hline
+39 & 5 & how our government handles our economic crisis & gay marriage \\
+\hline
+50 & 3 & the spending budget & education \\
+\hline
+72 & 6 & economy  no & terrorism \\
+\hline
+66 & 4 & to do what your profess... & its a problem that we have political parties \\
+\hline
+56 & 4 & morals & morals \\
+\hline
+\end{tabular}
+\caption{Sample of ANES Respondent Responses}
+\label{tab:anes-issues}
+\end{table}
+
+The second dataset was sourced from a political psychology experiment brought forth from Gadarian and Albertson where respondents' responses were 
+gathered on how negatively valenced emotions influence political attitudes towards immigration. The respondents were randomly assigned to one of two conditions. 
+The first condition was the fear-primed condition where respondents were instructed to write about immigration in a way that made them feel worried or afraid. 
+The second condition  was a neutral/reflective condition where they were instructed to write about immigration in a more deliberate, cognitive tone. 
+This dataset contains 352 observations and 16 columns describing demographic and experiment encodings. A sample is shown in Table 2. 
+
+
+\newpage
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|c|p{6cm}|}
+\hline
+\textbf{Case ID} & \textbf{Treatment} & \textbf{Fear (ra1)} & \textbf{Republican ID} & \textbf{Open-Ended Response} \\
+\hline
+287 & 1. worried & 1 & 1.000 & problems caused by the influx of illegal immigrants... \\
+\hline
+145 & 1. worried & 1 & 1.000 & i'm afraid of who might be getting into this country... \\
+\hline
+159 & 0. think   & 0 & 0.333 & they should enter the same way my grandparents did... \\
+\hline
+421 & 0. think   & 1 & 0.500 & legally entering the usa meeting the requirements is the law... \\
+\hline
+224 & 1. worried & 2 & 0.667 & terror, bombings, killing us, robbing america \\
+\hline
+\end{tabular}
+\caption{Gadarian Sample: Metadata and Immigration Responses}
+\label{tab:gadarian-text}
+\end{table}
+
+
+The last dataset was sourced from the RAND Experiment that was designed to study how people reason about tradeoffs in group-based financial scenarios. 
+The main column of interest is the `strategy.description` column that outlines open-ended natural language responses explaining why a respondent 
+chose to contribute (or not to contribute) to a shared pot in a public goods game. The answers reflect nuance and considerable variance between respondents. 
+This dataset contains 150 responses and 42 columns that share similar features as the previous two datasets. A sample is shown in Table 3. 
+
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|c|c|p{6.2cm}|}
+\hline
+\textbf{Age} & \textbf{Primed} & \textbf{Contribution} & \textbf{Normalized} & \textbf{Risk} & \textbf{Strategy Description} \\
+\hline
+22 & 1 & 0   & 0.0 & 4 & to maximize my personal earnings \\
+\hline
+20 & 1 & 0   & 0.0 & 5 & i could not trust that the other group members... \\
+\hline
+18 & 1 & 400 & 1.0 & 4 & benefits the group the most \\
+\hline
+21 & 1 & 0   & 0.0 & 4 & i would gain more by not adding money... \\
+\hline
+18 & 1 & 400 & 1.0 & 6 & i am banking on the fact that people will be less selfish... \\
+\hline
+\end{tabular}
+\caption{RAND Sample: Contributions and Strategy Explanations}
+\label{tab:rand-text-noedu}
+\end{table}
+
+
+# Unsupervised Methodology
