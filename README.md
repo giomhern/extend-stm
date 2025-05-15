@@ -4,7 +4,7 @@ A replication of research by Roberts et al, *Structural Topic Models for Open-En
 
 # Project Repository 
 
-An overview of the project repository is shown below. 
+An overview of the project repository is shown below. All code related files are included in the `scripts` folder. Images used for presentation and report are included in `output`. 
 
 ```
 ├── data
@@ -12,7 +12,10 @@ An overview of the project repository is shown below.
 │   ├── project-proposal.pdf
 │   └── project-proposal.rmd
 ├── output
+│   └── anes
 ├── README.md
 ├── scripts
-└── stm_replication.Rproj
+│   └── anes-analysis.R
+├── stm_replication.Rproj
+└── structure.txt
 ```
