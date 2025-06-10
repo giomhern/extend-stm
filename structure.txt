@@ -1,0 +1,65 @@
+.
+├── data
+│   ├── ANESAnalysis.R
+│   ├── ANESWarTopicAndEducation.pdf
+│   ├── final_anes_cleaned.ldac
+│   ├── final_anes_metadata.csv
+│   ├── final_anes_vocab.csv
+│   ├── final_anes.csv
+│   ├── final_anes.csv_cleaned.ldac
+│   ├── final_tdm_1.csv
+│   ├── final_tdm.csv
+│   ├── gadarian_bertopic_input.csv
+│   ├── gadarian_final_tdm.csv
+│   ├── gadarian_metadata.csv
+│   ├── gadarian_vocab.csv
+│   ├── gadarian.RData
+│   ├── GadarianAnalysis.R
+│   ├── GenderPerspectives.pdf
+│   ├── interactionGadarian.pdf
+│   ├── normalizedcontributions1011.pdf
+│   ├── normalizedcontributions89.pdf
+│   ├── ploteffect1011.pdf
+│   ├── ploteffect89.pdf
+│   ├── ploteffectGadarian.pdf
+│   ├── QuoteFearfulHighTopic1.pdf
+│   ├── QuoteFearLowTopic1.pdf
+│   ├── RandAnalysis1011.R
+│   ├── RandAnalysis89.R
+│   ├── RandAnalysis89.R~
+│   ├── STMWarTopicEducation.pdf
+│   ├── tdm1011_metadata.csv
+│   ├── tdm1011_vocab.csv
+│   ├── tdm1011.csv
+│   ├── tdm89_metadata.csv
+│   ├── tdm89_vocab.csv
+│   ├── tdm89.csv
+│   ├── Topic1Representative.pdf
+│   ├── Topic2Representative.pdf
+│   ├── Topics1011.pdf
+│   ├── Topics89.pdf
+│   ├── TopicsBottom.pdf
+│   ├── topicsGadarian.pdf
+│   ├── TopTopics.pdf
+│   └── TopTopicsThreshold7.pdf
+├── docs
+│   ├── 01
+│   ├── 02
+│   └── 03
+├── output
+│   ├── anes
+│   ├── ext-anes
+│   ├── ext-gadarian
+│   ├── gadarian
+│   ├── rand
+│   └── validation
+├── README.md
+├── scripts
+│   ├── anes.R
+│   ├── extension.ipynb
+│   ├── gadarian.R
+│   ├── rand.R
+│   └── validation.R
+└── structure.txt
+
+14 directories, 49 files
