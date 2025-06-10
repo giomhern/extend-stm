@@ -1,0 +1,36 @@
+--- Topic 0 ---
+jobs            0.10629
+people          0.06557
+illegal         0.06493
+americans       0.06314
+welfare         0.06115
+care            0.05780
+taxes           0.04862
+security        0.04679
+social          0.04641
+immigrants      0.04515
+
+--- Topic 1 ---
+illegal         0.10536
+people          0.09744
+immigrants      0.08177
+country         0.07615
+mexico          0.06034
+border          0.05925
+coming          0.05522
+legal           0.04923
+entering        0.04482
+english         0.03863
+
+--- Topic 2 ---
+immigration     0.09282
+think           0.09010
+immigrants      0.07798
+people          0.06006
+country         0.05926
+need            0.05137
+legally         0.04147
+illegal         0.04138
+worry           0.04075
+come            0.03783
+
